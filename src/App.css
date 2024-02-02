@@ -13,3 +13,7 @@ body {
 .mainPage{
   flex-grow: 1;
 }
+
+.card{
+  width: 200px;
+}
