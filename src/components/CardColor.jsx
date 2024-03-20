@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { Card, Button, Form } from "react-bootstrap";
-import { colorNameList } from "color-name-list";
 import { borrarColorAPI, leerColoresAPI } from "../helpers/queries";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardColor = ({ color, setColores }) => {
-  // const [selectorDesactivado, setSelectorDesactivado] = useState(false);
-  // const colorSeleccionado = colorNameList.find(color => color.hex === color);
   const borrarColor = () => {
     Swal.fire({
       title: "Estás seguro de eliminar el color?",
@@ -46,17 +42,18 @@ const CardColor = ({ color, setColores }) => {
         <Card.Body>
           <Card.Title>
             <div>{color.nombreColor}</div>
-            {/* <div>{colorSeleccionado.name}</div> */}
           </Card.Title>
           <div className="d-flex justify-content-center my-2">
             <Form.Control
               type="color"
               defaultValue={color.codigoHexadecimal}
-              // disabled={selectorDesactivado}
               disabled
             />
           </div>
-          <Link  className="me-lg-2 btn btn-warning m-1" to={"/administrador/editar/" + color._id}>
+          <Link
+            className="me-lg-2 btn btn-warning m-1"
+            to={"/administrador/editar/" + color._id}
+          >
             Editar
           </Link>
           <Button variant="danger" onClick={borrarColor}>

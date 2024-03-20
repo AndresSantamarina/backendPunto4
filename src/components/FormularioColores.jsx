@@ -27,7 +27,7 @@ const FormularioColores = ({ editar, titulo }) => {
       if (respuesta.status === 200) {
         const colorEncontrado = await respuesta.json();
         setValue("nombreColor", colorEncontrado.nombreColor);
-        setValue("codigoHexadecimal", colorEncontrado.codigoHexadecimal)
+        setValue("codigoHexadecimal", colorEncontrado.codigoHexadecimal);
       }
     } catch (error) {
       console.log(error);
@@ -80,18 +80,18 @@ const FormularioColores = ({ editar, titulo }) => {
     <section className="mainPage">
       <h3 className="display-6 text-center mt-3">{titulo}</h3>
 
-      <Form
-        onSubmit={handleSubmit(colorValidado)}
-        className="mt-5"
-      >
+      <Form onSubmit={handleSubmit(colorValidado)} className="mt-5">
         <div className="text-center my-2">
-        <Form.Text className="text-danger">
+          <Form.Text className="text-danger">
             {errors.nombreColor?.message}
           </Form.Text>
         </div>
-        <Form.Group className="mb-3 d-flex justify-content-center" controlId="formNombreColor">
+        <Form.Group
+          className="mb-3 d-flex justify-content-center"
+          controlId="formNombreColor"
+        >
           <Form.Control
-          className="w-50"
+            className="w-50"
             type="text"
             placeholder="Nombre del color"
             {...register("nombreColor", {
