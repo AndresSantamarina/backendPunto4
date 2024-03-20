@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Container className="my-4 mainPage">
-        <h1 className="text-center">Administrar colores</h1>
+        <h1 className="text-center">Paleta de colores</h1>
         <FormularioColores/>
       </Container>
       <Footer />

@@ -1,6 +1,6 @@
-# Trabajo Práctico de React - Punto 6
+# Trabajo Práctico de Backend - Punto 4
 
-Este proyecto permite agregar colores, almacenarlos en el local storage y verlos listados.
+Este proyecto permite agregar colores, almacenarlos y verlos listados.
 
 ## Librerías
 

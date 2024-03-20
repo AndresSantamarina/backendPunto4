@@ -25,27 +25,26 @@ const FormularioColores = () => {
 
   return (
     <section>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group
-          className="mb-3 d-flex"
-          controlId="exampleForm.ControlInput1"
-        >
+      <h3 className="display-6 text-center mt-3">Seleccione un color</h3>
+      <Form onSubmit={handleSubmit} className="d-flex justify-content-center mt-5">
+        <Form.Group className="mb-3 d-flex" controlId="colorInput">
           <Form.Control
-            type="text"
-            placeholder="Ingrese un color"
-            minLength={3}
-            maxLength={15}
+          type="text"
+          placeholder="Nombre del color"/>
+          <Form.Control
             onChange={(e) => setColor(e.target.value)}
-            value={color}
+            type="color"
+            defaultValue="#563d7c"
+            title="Choose your color"
           />
-          <Button className="ms-2" type="submit">
+          <Button className="ms-2" type="submit" variant="success">
             Guardar
           </Button>
         </Form.Group>
       </Form>
       <article className="container">
-        <div className="d-flex align-content-center flex-wrap">
-          <CardColor arrayColores={colores} borrarColor={borrarColor}/>
+        <div className="d-flex align-content-center flex-wrap contenedorCards">
+          <CardColor arrayColores={colores} borrarColor={borrarColor} />
         </div>
       </article>
     </section>
